@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@deno/mod.js';
+import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@v0.2.2-deno/mod.js';
 ```
 
 #### dcusumkbn2( N, sum, x, strideX, y, strideY )
@@ -172,7 +172,7 @@ dcusumkbn2.ndarray( N, 0.0, x, 2, 1, y, -1, y.length-1 );
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
-import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@deno/mod.js';
+import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@v0.2.2-deno/mod.js';
 
 var y;
 var x;
