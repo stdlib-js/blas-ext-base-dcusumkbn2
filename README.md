@@ -48,6 +48,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-ext-base-dcusumkbn2/tags). For example,
+
+```javascript
 import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@v0.2.2-esm/index.mjs';
 ```
 
@@ -177,7 +182,7 @@ dcusumkbn2.ndarray( N, 0.0, x, 2, 1, y, -1, y.length-1 );
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@v0.2.2-esm/index.mjs';
+import dcusumkbn2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@esm/index.mjs';
 
 var y;
 var x;
