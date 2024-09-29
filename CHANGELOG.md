@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2024-09-21)
+## Unreleased (2024-09-29)
+
+<section class="features">
+
+### Features
+
+-   [`c4172be`](https://github.com/stdlib-js/stdlib/commit/c4172be96f0316ab213bbfe63b9678141a80709e) - add C `ndarray` API and refactor `blas/ext/base/dcusumkbn2` [(#2958)](https://github.com/stdlib-js/stdlib/pull/2958)
+
+</section>
+
+<!-- /.features -->
 
 <section class="bug-fixes">
 
@@ -22,6 +32,7 @@
 
 <details>
 
+-   [`c4172be`](https://github.com/stdlib-js/stdlib/commit/c4172be96f0316ab213bbfe63b9678141a80709e) - **feat:** add C `ndarray` API and refactor `blas/ext/base/dcusumkbn2` [(#2958)](https://github.com/stdlib-js/stdlib/pull/2958) _(by Muhammad Haris, Athan Reines)_
 -   [`e4de24f`](https://github.com/stdlib-js/stdlib/commit/e4de24f1e086063876214e73f1f6b659dc624eb1) - **fix:** resolve bugs in addon.c files _(by Philipp Burckhardt)_
 
 </details>
@@ -34,8 +45,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
+-   Muhammad Haris
 -   Philipp Burckhardt
 
 </section>

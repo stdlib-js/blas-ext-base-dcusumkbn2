@@ -1,9 +1,9 @@
-"use strict";var j=function(n,r){return function(){return r||n((r={exports:{}}).exports,r),r.exports}};var _=j(function(K,R){
-var x=require('@stdlib/math-base-special-abs/dist');function A(n,r,d,q,l,s){var b,f,t,c,u,e,a,i,v;if(n<=0)return l;for(q<0?f=(1-n)*q:f=0,s<0?t=(1-n)*s:t=0,b=0,c=0,v=0;v<n;v++)e=d[f],a=r+e,x(r)>=x(e)?i=r-a+e:i=e-a+r,r=a,a=c+i,x(c)>=x(i)?u=c-a+i:u=i-a+c,c=a,b+=u,l[t]=r+c+b,f+=q,t+=s;return l}R.exports=A
-});var O=j(function(L,E){
-var p=require('@stdlib/math-base-special-abs/dist');function B(n,r,d,q,l,s,b,f){var t,c,u,e,a,i,v,o,k;if(n<=0)return s;for(c=l,u=f,t=0,e=0,k=0;k<n;k++)i=d[c],v=r+i,p(r)>=p(i)?o=r-v+i:o=i-v+r,r=v,v=e+o,p(e)>=p(o)?a=e-v+o:a=o-v+e,e=v,t+=a,s[u]=r+e+t,c+=q,u+=b;return s}E.exports=B
-});var w=j(function(M,h){
-var C=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),g=_(),D=O();C(g,"ndarray",D);h.exports=g
-});var F=require("path").join,G=require('@stdlib/utils-try-require/dist'),H=require('@stdlib/assert-is-error/dist'),I=w(),y,z=G(F(__dirname,"./native.js"));H(z)?y=I:y=z;module.exports=y;
+"use strict";var x=function(e,r){return function(){return r||e((r={exports:{}}).exports,r),r.exports}};var k=x(function(K,j){
+var c=require('@stdlib/math-base-special-abs/dist');function z(e,r,o,n,s,u,h,w){var q,f,d,i,b,t,a,v,p;if(e<=0)return u;for(f=s,d=w,q=0,i=0,p=0;p<e;p++)t=o[f],a=r+t,c(r)>=c(t)?v=r-a+t:v=t-a+r,r=a,a=i+v,c(i)>=c(v)?b=i-a+v:b=v-a+i,i=a,q+=b,u[d]=r+i+q,f+=n,d+=h;return u}j.exports=z
+});var R=x(function(L,m){
+var y=require('@stdlib/strided-base-stride2offset/dist'),A=k();function B(e,r,o,n,s,u){return A(e,r,o,n,y(e,n),s,u,y(e,u)),s}m.exports=B
+});var O=x(function(M,E){
+var C=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),_=R(),D=k();C(_,"ndarray",D);E.exports=_
+});var F=require("path").join,G=require('@stdlib/utils-try-require/dist'),H=require('@stdlib/assert-is-error/dist'),I=O(),l,g=G(F(__dirname,"./native.js"));H(g)?l=I:l=g;module.exports=l;
 /** @license Apache-2.0 */
 //# sourceMappingURL=index.js.map
