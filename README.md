@@ -247,14 +247,14 @@ stdlib_strided_dcusumkbn2( 4, 0.0, x, 1, y, 1 );
 The function accepts the following arguments:
 
 -   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **sum**: `[in] CBLAS_INT` initial sum.
+-   **sum**: `[in] double` initial sum.
 -   **X**: `[in] double*` input array.
 -   **strideX**: `[in] CBLAS_INT` index increment for `X`.
 -   **Y**: `[out] double*` output array.
 -   **strideY**: `[in] CBLAS_INT` index increment for `Y`.
 
 ```c
-void stdlib_strided_dcusumkbn2( const CBLAS_INT N, const CBLAS_INT sum, const double *X, const CBLAS_INT strideX, double *Y, const CBLAS_INT strideY );
+void stdlib_strided_dcusumkbn2( const CBLAS_INT N, const double sum, const double *X, const CBLAS_INT strideX, double *Y, const CBLAS_INT strideY );
 ```
 
 <!-- lint disable maximum-heading-length -->
@@ -275,7 +275,7 @@ stdlib_strided_dcusumkbn2_ndarray( 4, 0.0, x, 1, 0, y, 1, 0 );
 The function accepts the following arguments:
 
 -   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **sum**: `[in] CBLAS_INT` initial sum.
+-   **sum**: `[in] double` initial sum.
 -   **X**: `[in] double*` input array.
 -   **strideX**: `[in] CBLAS_INT` index increment for `X`.
 -   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
@@ -284,7 +284,7 @@ The function accepts the following arguments:
 -   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
 
 ```c
-void stdlib_strided_dcusumkbn2_ndarray( const CBLAS_INT N, const CBLAS_INT sum, const double *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, double *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
+void stdlib_strided_dcusumkbn2_ndarray( const CBLAS_INT N, const double sum, const double *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, double *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
 ```
 
 </section>
