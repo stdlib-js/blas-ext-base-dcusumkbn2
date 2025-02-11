@@ -41,38 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-dcusumkbn2
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-dcusumkbn2 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var dcusumkbn2 = require( 'path/to/vendor/umd/blas-ext-base-dcusumkbn2/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.dcusumkbn2;
-})();
-</script>
+var dcusumkbn2 = require( '@stdlib/blas-ext-base-dcusumkbn2' );
 ```
 
 #### dcusumkbn2( N, sum, x, strideX, y, strideY )
@@ -100,11 +94,11 @@ The function has the following parameters:
 -   **N**: number of indexed elements.
 -   **sum**: initial sum.
 -   **x**: input [`Float64Array`][@stdlib/array/float64].
--   **strideX**: index increment for `x`.
+-   **strideX**: stride length for `x`.
 -   **y**: output [`Float64Array`][@stdlib/array/float64].
--   **strideY**: index increment for `y`.
+-   **strideY**: stride length for `y`.
 
-The `N` and stride parameters determine which elements in `x` and `y` are accessed at runtime. For example, to compute the cumulative sum of every other element in `x`,
+The `N` and stride parameters determine which elements in the strided arrays are accessed at runtime. For example, to compute the cumulative sum of every other element:
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
@@ -112,9 +106,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ 1.0, 2.0, 2.0, -7.0, -2.0, 3.0, 4.0, 2.0 ] );
 var y = new Float64Array( x.length );
 
-var N = 4;
-
-var v = dcusumkbn2( N, 0.0, x, 2, y, 1 );
+var v = dcusumkbn2( 4, 0.0, x, 2, y, 1 );
 // y => <Float64Array>[ 1.0, 3.0, 1.0, 5.0, 0.0, 0.0, 0.0, 0.0 ]
 ```
 
@@ -133,9 +125,7 @@ var y0 = new Float64Array( x0.length );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 var y1 = new Float64Array( y0.buffer, y0.BYTES_PER_ELEMENT*3 ); // start at 4th element
 
-var N = 4;
-
-dcusumkbn2( N, 0.0, x1, -2, y1, 1 );
+dcusumkbn2( 4, 0.0, x1, -2, y1, 1 );
 // y0 => <Float64Array>[ 0.0, 0.0, 0.0, 4.0, 6.0, 4.0, 5.0, 0.0 ]
 ```
 
@@ -158,7 +148,7 @@ The function has the following additional parameters:
 -   **offsetX**: starting index for `x`.
 -   **offsetY**: starting index for `y`.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, offsetX and offsetY parameters support indexing semantics based on a starting indices. For example, to calculate the cumulative sum of every other value in `x` starting from the second value and to store in the last `N` elements of `y` starting from the last element
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameters support indexing semantics based on starting indices. For example, to calculate the cumulative sum of every other value in `x` starting from the second value and to store in the last `N` elements of `y` starting from the last element:
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
@@ -166,9 +156,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var y = new Float64Array( x.length );
 
-var N = 4;
-
-dcusumkbn2.ndarray( N, 0.0, x, 2, 1, y, -1, y.length-1 );
+dcusumkbn2.ndarray( 4, 0.0, x, 2, 1, y, -1, y.length-1 );
 // y => <Float64Array>[ 0.0, 0.0, 0.0, 0.0, 5.0, 1.0, -1.0, 1.0 ]
 ```
 
@@ -192,15 +180,10 @@ dcusumkbn2.ndarray( N, 0.0, x, 2, 1, y, -1, y.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-dcusumkbn2@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var Float64Array = require( '@stdlib/array-float64' );
+var dcusumkbn2 = require( '@stdlib/blas-ext-base-dcusumkbn2' );
 
 var x = discreteUniform( 10, -100, 100, {
     'dtype': 'float64'
@@ -212,11 +195,6 @@ console.log( y );
 
 dcusumkbn2( x.length, 0.0, x, 1, y, -1 );
 console.log( y );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -225,7 +203,134 @@ console.log( y );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/ext/base/dcusumkbn2.h"
+```
+
+#### stdlib_strided_dcusumkbn2( N, sum, \*X, strideX, \*Y, strideY )
+
+Computes the cumulative sum of double-precision floating-point strided array elements using a second-order iterative Kahan–Babuška algorithm.
+
+```c
+const double x[] = { 1.0, 2.0, 3.0, 4.0 }
+double y[] = { 0.0, 0.0, 0.0, 0.0 }
+
+stdlib_strided_dcusumkbn2( 4, 0.0, x, 1, y, 1 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **sum**: `[in] double` initial sum.
+-   **X**: `[in] double*` input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **Y**: `[out] double*` output array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+
+```c
+void stdlib_strided_dcusumkbn2( const CBLAS_INT N, const double sum, const double *X, const CBLAS_INT strideX, double *Y, const CBLAS_INT strideY );
+```
+
+<!-- lint disable maximum-heading-length -->
+
+#### stdlib_strided_dcusumkbn2_ndarray( N, sum, \*X, strideX, offsetX, \*Y, strideY, offsetY )
+
+<!-- lint enable maximum-heading-length -->
+
+Computes the cumulative sum of double-precision floating-point strided array elements using a second-order iterative Kahan–Babuška algorithm and alternative indexing semantics.
+
+```c
+const double x[] = { 1.0, 2.0, 3.0, 4.0 }
+double y[] = { 0.0, 0.0, 0.0, 0.0 }
+
+stdlib_strided_dcusumkbn2_ndarray( 4, 0.0, x, 1, 0, y, 1, 0 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **sum**: `[in] double` initial sum.
+-   **X**: `[in] double*` input array.
+-   **strideX**: `[in] CBLAS_INT` stride length for `X`.
+-   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
+-   **Y**: `[out] double*` output array.
+-   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
+-   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
+
+```c
+void stdlib_strided_dcusumkbn2_ndarray( const CBLAS_INT N, const double sum, const double *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, double *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/ext/base/dcusumkbn2.h"
+
+int main( void ) {
+    // Create strided arrays:
+    const double x[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 };
+    double y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+    // Specify the number of elements:
+    const int N = 4;
+
+    // Specify stride lengths:
+    const int strideX = 2;
+    const int strideY = -2;
+
+    // Compute the cumulative sum:
+    stdlib_strided_dcusumkbn2( N, 0.0, x, strideX, y, strideY );
+
+    // Print the result:
+    for ( int i = 0; i < 8; i++ ) {
+        printf( "y[ %d ] = %lf\n", i, y[ i ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <section class="references">
 
@@ -325,7 +430,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-dcusumkbn2/main/LICENSE
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -333,11 +438,11 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dcusum]: https://github.com/stdlib-js/blas-ext-base-dcusum/tree/umd
+[@stdlib/blas/ext/base/dcusum]: https://github.com/stdlib-js/blas-ext-base-dcusum
 
-[@stdlib/blas/ext/base/gcusumkbn2]: https://github.com/stdlib-js/blas-ext-base-gcusumkbn2/tree/umd
+[@stdlib/blas/ext/base/gcusumkbn2]: https://github.com/stdlib-js/blas-ext-base-gcusumkbn2
 
-[@stdlib/blas/ext/base/scusumkbn2]: https://github.com/stdlib-js/blas-ext-base-scusumkbn2/tree/umd
+[@stdlib/blas/ext/base/scusumkbn2]: https://github.com/stdlib-js/blas-ext-base-scusumkbn2
 
 <!-- </related-links> -->
 
