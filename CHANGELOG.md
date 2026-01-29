@@ -2,9 +2,9 @@
 
 > Package changelog.
 
-<section class="release" id="unreleased">
+<section class="release" id="v0.3.0">
 
-## Unreleased (2025-06-23)
+## 0.3.0 (2026-01-29)
 
 <section class="features">
 
@@ -35,6 +35,7 @@
 
 <details>
 
+-   [`2035f34`](https://github.com/stdlib-js/stdlib/commit/2035f344a1a469278042b7532f034dc6119933b3) - **docs:** add function documentation _(by Athan Reines)_
 -   [`499ac6a`](https://github.com/stdlib-js/stdlib/commit/499ac6abb988bb6e28cd350976d5fee2fd77cf90) - **fix:** propagate sign to the accumulated sum _(by Athan Reines)_
 -   [`cb8907d`](https://github.com/stdlib-js/stdlib/commit/cb8907dbdb8e4670c3519555e8abc2ddddbf1d77) - **fix:** preserve the sign of zero _(by Athan Reines)_
 -   [`d9c08b0`](https://github.com/stdlib-js/stdlib/commit/d9c08b0a4028175c0a95f5fa93617609ae65108a) - **docs:** update `blas/ext/base/dcusumkbn2` to follow current project conventions [(#5168)](https://github.com/stdlib-js/stdlib/pull/5168) _(by Muhammad Haris)_
