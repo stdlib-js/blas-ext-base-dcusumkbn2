@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-03-09)
+## Unreleased (2026-04-10)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`35566af`](https://github.com/stdlib-js/stdlib/commit/35566af0add64775e60422fd16e50e1bec3947e7) - **docs:** fix C examples in READMEs [(#11229)](https://github.com/stdlib-js/stdlib/pull/11229) _(by anee3, Athan Reines)_
 -   [`57a3d9d`](https://github.com/stdlib-js/stdlib/commit/57a3d9dd0af3d39cdb470c353d9edca50913ba98) - **bench:** refactor to use dynamic memory allocation in `blas/ext/base/dcusumkbn2` [(#10611)](https://github.com/stdlib-js/stdlib/pull/10611) _(by Prajjwal Bajpai)_
 -   [`78769c9`](https://github.com/stdlib-js/stdlib/commit/78769c92ed228492a9e865548593f29f02195123) - **bench:** refactor to use string interpolation in `blas/ext/base/dcusumkbn2` [(#10612)](https://github.com/stdlib-js/stdlib/pull/10612) _(by Prajjwal Bajpai)_
 
@@ -25,9 +26,11 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Prajjwal Bajpai
+-   anee3
 
 </section>
 
